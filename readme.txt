@@ -102,7 +102,7 @@ No. This plugin is provided in the hopes it might be useful, but without warrant
 
 **1.0.1, 28 January 2009**
 
-* Fixed plugin folder references to accommodate WordPress Plugins Repository enforced folder naming conventions
+* Fixed directory references to accommodate the WordPress Plugins Repository's automatic choice of name for the download archive
 
 **1.0, 27 January 2009**
 
