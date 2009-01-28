@@ -1,6 +1,6 @@
 <?php
 /*
-	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.0
+	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.0.1
 	 Copyright (c) 2009 Greg Mulhauser
 	 
 	 File Written By:
@@ -10,7 +10,7 @@
 	 
 	 Information:
 	 - Greg's Threaded Comment Numbering Options Page
-	 - wp-content/plugins/threaded-comment-numbering/gtcn-options.php
+	 - wp-content/plugins/gregs-threaded-comment-numbering/gtcn-options.php
 */
 //register_setting('gtcn_options', 'gtcn_nesting_replacement', 'intval');
 //register_setting('gtcn_options', 'gtcn_orphan_replacement', 'intval');
