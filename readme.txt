@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -99,6 +99,10 @@ No. This plugin is provided in the hopes it might be useful, but without warrant
 2. Hierarchical comment numbering using the default theme and the provided styling
 
 == Revision History ==
+
+**1.0.2, 29 January 2009**
+
+* Fixed a nested comment counter bug -- thanks to Philip S
 
 **1.0.1, 28 January 2009**
 

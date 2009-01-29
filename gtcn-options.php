@@ -1,6 +1,6 @@
 <?php
 /*
-	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.0.1
+	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.0.2
 	 Copyright (c) 2009 Greg Mulhauser
 	 
 	 File Written By:
