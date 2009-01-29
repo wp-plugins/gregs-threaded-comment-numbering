@@ -77,6 +77,12 @@ However, if you would like to remove the plugin completely, just disable it via 
 
 == Frequently Asked Questions ==
 
+= Wait! I can't find `wp_list_comments()` in my theme files! How can I use this plugin? =
+
+Not all themes have yet been updated to support the new comments function. You can check with the theme's creator, or there's an excellent tutorial available if you'd like to tackle the job yourself:
+
+http://codex.wordpress.org/Migrating_Plugins_and_Themes_to_2.7/Enhanced_Comment_Display
+
 = How does Greg's Threaded Comment Numbering plugin work for pingbacks and trackbacks? =
 
 The plugin will automatically detect and respond appropriately, depending on whether the callback function itself is handling all types of comments, just pingbacks, just trackbacks, etc.
