@@ -1,10 +1,10 @@
 === Greg's Threaded Comment Numbering ===
 Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
-Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser
+Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 1.0
+Stable tag: 1.0.3
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -23,7 +23,7 @@ For more information, please see this plugin's information page: [Greg's Threade
 == Installation ==
 
 1. Unzip the plugin archive
-2. Upload the entire folder `greg-threaded-comment-numbering` to `/wp-content/plugins/`
+2. Upload the entire folder `gregs-threaded-comment-numbering` to `/wp-content/plugins/`
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Go to Settings -> Threaded Comment Numbering to configure your preferences
 5. Update your template's `comments.php` or `functions.php` to incorporate numbering, as described below
@@ -58,16 +58,7 @@ The default `<div>` wrapper class is `commentnumber`.
 
 *Safe Wrapping of Plugin-Dependent Function Calls*
 
-When updating your theme with any function call that is dependent upon the presence of a plugin, it is good practice to wrap the call within a conditional that checks whether the function is available, as in the following:
-
-`<?php if (function_exists('gtcn_basic_callback'))
-		  wp_list_comments('callback=gtcn_basic_callback')
-	   else wp_list_comments(); ?>`
-
-Or:
-
-`<?php if (function_exists('gtcn_comment_numbering'))
-		  echo gtcn_comment_numbering($comment->comment_ID, $args); ?>`
+I've moved this section of the README to the main information page for the plugin: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 = Deactivating and Uninstalling =
 
@@ -77,26 +68,30 @@ However, if you would like to remove the plugin completely, just disable it via 
 
 == Frequently Asked Questions ==
 
-= How does Greg's Threaded Comment Numbering plugin work for pingbacks and trackbacks? =
-
-The plugin will automatically detect and respond appropriately, depending on whether the callback function itself is handling all types of comments, just pingbacks, just trackbacks, etc.
-
-= What if I call the plugin functions from somewhere in my template other than a callback for the `wp_list_comments()` function? =
-
-The plugin is designed to work in conjunction with a callback function for `wp_list_comments()`, and it is only in that context that it will have anything to number.
-
-= Does this plugin work with versions of WordPress earlier than 2.7? =
-
-No. The plugin is designed specifically to work with new comment handling features introduced in version 2.7.
-
-= Do you provide support for this plugin? =
-
-No. This plugin is provided in the hopes it might be useful, but without warranty or support of any kind.
+I've moved this section of the README to the main information page for the plugin, where it can be updated independently of new releases: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Screenshots ==
 
 1. Basic threaded comment numbering configuration options
 2. Hierarchical comment numbering using the default theme and the provided styling
+
+== Revision History ==
+
+**1.0.3, 30 January 2009**
+
+* Fixed another bug with deep nesting -- thanks to Marina
+
+**1.0.2, 29 January 2009**
+
+* Fixed a nested comment counter bug -- thanks to Philip S
+
+**1.0.1, 28 January 2009**
+
+* Fixed directory references to accommodate the WordPress Plugins Repository's automatic choice of name for the download archive
+
+**1.0, 27 January 2009**
+
+* Initial public release
 
 == More Information ==
 
