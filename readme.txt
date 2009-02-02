@@ -14,11 +14,11 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Increased support for hierarchical numbering of threaded comments from 2 levels up to the full 10 levels deep supported by WordPress
+* Increased support for hierarchical numbering of threaded comments from 2 levels up to the full 10 levels deep supported by WordPress. [Existing users: Please be sure to visit your options and settings, as your maximum threading depth will be set to '1' by the update.]
 
-* 'Jumble Count' mode if you'd like your numbers to match the order in which comments were received, rather than the order in which they are displayed
+* 'Jumble Count' mode if you'd like your numbers to match the order in which comments were received, rather than the order in which they are displayed.
 
-* Rewritten core numbering routines make an already speedy plugin even faster and more efficient
+* Rewritten core numbering routines make an already speedy plugin even faster and more efficient.
 
 = Background =
 
