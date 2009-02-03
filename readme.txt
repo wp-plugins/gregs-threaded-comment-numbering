@@ -20,6 +20,8 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 * Rewritten core numbering routines make an already speedy plugin even faster and more efficient.
 
+For more details on what's new in this release, please see the update announcement: [New Version of Comment Numbering Plugin Adds Features and Fixes](http://counsellingresource.com/features/2009/02/03/comment-numbering-plugin-new-version/)
+
 = Background =
 
 The introduction of WordPress 2.7 brought with it significant new capabilities for threading and paging comments, but these same changes in WordPress mean that well established methods for numbering comments -- like including a basic incrementing counter within your template code -- no longer do the trick. Fortunately, taking advantage of modern comment handling features like paging and threading doesn't have to mean giving up comment numbering altogether.
@@ -30,7 +32,7 @@ The plugin numbers comments accurately whether you choose to display them in asc
 
 For coders, the plugin provides additional configuration options via direct calls to the function that handles the numbering.
 
-For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
+For more information, please see this plugin's original information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Installation ==
 
@@ -94,7 +96,7 @@ I've moved this section of the README to the main information page for the plugi
 * New feature: increased hierarchical numbering from 2 levels to 10 levels
 * New feature: 'jumble count' mode for time-ordered numbering
 * Enhancement: rewritten core numbering routines for significantly improved efficiency
-* Fixd: cleaned up 'path to url' text (left over from WordPress Codex) in the provided basic callback function, restoring default avatar features for users calling the basic function
+* Fixed: cleaned up 'path to url' text (left over from WordPress Codex) in the provided basic callback function, restoring default avatar features for users calling the basic function
 
 **1.0.3, 30 January 2009**
 
