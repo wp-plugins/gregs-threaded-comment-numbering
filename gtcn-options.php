@@ -1,6 +1,6 @@
 <?php
 /*
-	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.0.2
+	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.1.1
 	 Copyright (c) 2009 Greg Mulhauser
 	 
 	 File Written By:
@@ -41,10 +41,29 @@ $plugin_page = ' <a href="http://counsellingresource.com/features/2009/01/27/thr
   </tr>
 </table>
 <h3><?php _e('Handling Orphaned and Deeply Nested Comments', 'gtcn-plugin'); ?></h3>
-<p><?php _e('Greg&#8217;s Threaded Comment Numbering plugin displays hierarchical numbering up through a depth of 2 (e.g., comment number 2 and its replies numbered 2.1, 2.2, etc). With more deeply nested replies, hierarchical numbering can become cumbersome (e.g., comment number 12.19.6.4), so for higher depths you can choose what to display in lieu of a number. In addition, as of version 2.7, WordPress has problems ordering orphaned comments &mdash; where threading is enabled at a given depth (say, 2), but comments exist which were previously entered at a deeper depth (say, 3). You can choose what to display when this happens. When threading is disabled completely, all comments will be correctly ordered, regardless of the setting specified for orphaned replies.', 'gtcn-plugin'); ?></p>
+<p><?php _e('You can choose how deeply into nested replies Greg&#8217;s Threaded Comment Numbering plugin should display hierarchical numbering, up to the full 10 levels supported by WordPress. For example, hierarchical numbering up through a depth of 2 will display a number for comment 5 and its replies numbered 5.1, 5.2, etc). With more deeply nested replies, hierarchical numbering can become cumbersome (e.g., comment number 12.19.6.4), so if you choose to stop hierarchical numbering sooner than the level at which you permit comments, you can choose what to display in lieu of a number.', 'gtcn-plugin'); ?></p>
+<p><?php _e('Finally, as of version 2.7, WordPress has severe problems handling orphaned comments &mdash; where threading is enabled at a given depth (say, 2), but comments exist which were previously entered at a deeper depth (say, 3) &mdash; especially when paging is also enabled. You can choose what to display when this happens. When threading is disabled completely in the WordPress discussion settings, all comments will be correctly ordered, regardless of the setting specified for orphaned replies. Note that for WordPress 2.7, disabling comment threading is very much not the same as setting threading to depth 1.', 'gtcn-plugin'); ?></p>
 <table class="form-table">
   <tr>
-	  <th scope="row" valign="top"><?php _e('Indicator for Deeply Nested Replies', 'gtcn-plugin'); ?></th>
+	  <th scope="row" valign="top"><?php _e('Maximum Depth to Display Hierarchical Numbering', 'gtcn-plugin'); ?></th>
+	  <td>
+		  <select name="gtcn_deepest_display" size="1">
+			  <option value="1"<?php selected('1', get_option('gtcn_deepest_display')); ?>><?php _e('1', 'gtcn-plugin'); ?></option>
+			  <option value="2"<?php selected('2', get_option('gtcn_deepest_display')); ?>><?php _e('2', 'gtcn-plugin'); ?></option>
+			  <option value="3"<?php selected('3', get_option('gtcn_deepest_display')); ?>><?php _e('3', 'gtcn-plugin'); ?></option>
+			  <option value="4"<?php selected('4', get_option('gtcn_deepest_display')); ?>><?php _e('4', 'gtcn-plugin'); ?></option>
+			  <option value="5"<?php selected('5', get_option('gtcn_deepest_display')); ?>><?php _e('5', 'gtcn-plugin'); ?></option>
+			  <option value="6"<?php selected('6', get_option('gtcn_deepest_display')); ?>><?php _e('6', 'gtcn-plugin'); ?></option>
+			  <option value="7"<?php selected('7', get_option('gtcn_deepest_display')); ?>><?php _e('7', 'gtcn-plugin'); ?></option>
+			  <option value="8"<?php selected('8', get_option('gtcn_deepest_display')); ?>><?php _e('8', 'gtcn-plugin'); ?></option>
+			  <option value="9"<?php selected('9', get_option('gtcn_deepest_display')); ?>><?php _e('9', 'gtcn-plugin'); ?></option>
+			  <option value="10"<?php selected('10', get_option('gtcn_deepest_display')); ?>><?php _e('10', 'gtcn-plugin'); ?></option>
+		  </select>
+
+	</td> 
+  </tr>
+  <tr>
+	  <th scope="row" valign="top"><?php _e('Indicator for More Deeply Nested Replies', 'gtcn-plugin'); ?></th>
 	  <td>
 		  <ul>
 			  <li><input type="radio" name="gtcn_nesting_replacement" value="1"<?php checked('1', get_option('gtcn_nesting_replacement')); ?> /> <?php _e('Display Ellipsis: &#8230; (recommended)', 'gtcn-plugin'); ?></li>
@@ -62,6 +81,20 @@ $plugin_page = ' <a href="http://counsellingresource.com/features/2009/01/27/thr
 	  </td> 
   </tr>
 </table>
+<h3><?php _e('Perform a Jumble Count', 'gtcn-plugin'); ?></h3>
+<p><?php _e('If you&#8217;re not big on hierarchical numbering, but you&#8217;d still like to see a number indicating the order in which comments were received, you can enable the &#8216;jumble count&#8217; mode. In this mode, all comments will be numbered strictly in the order in which they were posted. Note that if comments are threaded, the order of posting does not equal the order in which they are displayed. Thus the term &#8216;jumble count&#8217;: with threaded comments enabled, jumble count may yield a sequence of numbers which does not at all match the order in which the comments are displayed on the page.', 'gtcn-plugin'); ?></p>
+<table class="form-table">
+  <tr>
+	  <th scope="row" valign="top"><?php _e('Enable Jumble Count?', 'gtcn-plugin'); ?></th>
+	  <td>
+		  <ul>
+			  <li><input type="radio" name="gtcn_jumble_count" value="0"<?php checked('0', get_option('gtcn_jumble_count')); ?> /> <?php _e('Count Entries in Display Order (recommended)', 'gtcn-plugin'); ?></li>
+			  <li><input type="radio" name="gtcn_jumble_count" value="1"<?php checked('1', get_option('gtcn_jumble_count')); ?> /> <?php _e('Do a Jumble Count', 'gtcn-plugin'); ?></li>
+		  </ul>
+	  </td> 
+  </tr>
+</table>
+<p><em><?php _e('Note that jumble counting is the most computationally intensive method of numbering: with jumble count enabled, every comment requires a database query to compute its number, whereas with the normal method, just one database query is required per page.', 'gtcn-plugin'); ?></em></p>
 <h3><?php _e('Hat Tip?', 'gtcn-plugin'); ?></h3>
 <p><?php _e('If you feel that Greg&#8217;s Threaded Comment Numbering plugin has improved your blog&#8217;s comments section, you can choose to display a small thank you message in the footer. This is NOT ENABLED by default, but you can enable it here:', 'gtcn-plugin'); ?></p>
 <table class="form-table">
