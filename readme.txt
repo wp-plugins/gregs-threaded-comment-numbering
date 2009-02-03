@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: 1.1
+Stable tag: 1.1.1
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,7 +14,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Increased support for hierarchical numbering of threaded comments from 2 levels up to the full 10 levels deep supported by WordPress. [Existing users: Please be sure to visit your options and settings, as your maximum threading depth will be set to '1' by the update.]
+* Increased support for hierarchical numbering of threaded comments from 2 levels up to the full 10 levels deep supported by WordPress.
 
 * 'Jumble Count' mode if you'd like your numbers to match the order in which comments were received, rather than the order in which they are displayed.
 
@@ -90,6 +90,10 @@ I've moved this section of the README to the main information page for the plugi
 2. Hierarchical comment numbering using the default theme and the provided styling
 
 == Revision History ==
+
+**1.1.1, 3 February 2009**
+
+* Folks who didn't notice the README note to update their preferred level of hierarchical numbering will find that the code now does it for them
 
 **1.1, 2 February 2009**
 
