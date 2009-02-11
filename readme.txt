@@ -3,7 +3,7 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.7
+Tested up to: 2.7.1
 Stable tag: 1.1.1
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
