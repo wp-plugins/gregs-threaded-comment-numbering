@@ -1,6 +1,6 @@
 <?php
 /*
-	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.1.1
+	 WordPress 2.7 Plugin: Greg's Threaded Comment Numbering 1.1.2
 	 Copyright (c) 2009 Greg Mulhauser
 	 
 	 File Written By:
@@ -12,9 +12,6 @@
 	 - Greg's Threaded Comment Numbering Options Page
 	 - wp-content/plugins/gregs-threaded-comment-numbering/gtcn-options.php
 */
-//register_setting('gtcn_options', 'gtcn_nesting_replacement', 'intval');
-//register_setting('gtcn_options', 'gtcn_orphan_replacement', 'intval');
-//register_setting('gtcn_options', 'gtcn_use_styles', 'intval');
 
 $site_link = ' <a href="http://counsellingresource.com/">CounsellingResource.com</a>';
 $plugin_page = ' <a href="http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/">Greg&#8217;s Threaded Comment Numbering plugin</a>';
@@ -34,15 +31,15 @@ $plugin_page = ' <a href="http://counsellingresource.com/features/2009/01/27/thr
 	  <th scope="row" valign="top"><?php _e('Use Built-In Styles?', 'gtcn-plugin'); ?></th>
 	  <td>
 	  <ul>
-		  <li><input type="radio" name="gtcn_use_styles" value="1"<?php checked('1', get_option('gtcn_use_styles')); ?> /> <?php _e('Yes - Load an Extra Numbering Stylesheet', 'gtcn-plugin'); ?></li>
-		  <li><input type="radio" name="gtcn_use_styles" value="0"<?php checked('0', get_option('gtcn_use_styles')); ?> /> <?php _e('No - I Will Provide My Own Number Styling', 'gtcn-plugin'); ?></li>
+		  <li><input type="radio" name="gtcn_use_styles" value="1"<?php checked('1', get_option('gtcn_use_styles')); ?> /> <?php _e('Yes - load an extra numbering stylesheet', 'gtcn-plugin'); ?></li>
+		  <li><input type="radio" name="gtcn_use_styles" value="0"<?php checked('0', get_option('gtcn_use_styles')); ?> /> <?php _e('No - I will provide my own number styling', 'gtcn-plugin'); ?></li>
 	  </ul>
 	  </td> 
   </tr>
 </table>
 <h3><?php _e('Handling Orphaned and Deeply Nested Comments', 'gtcn-plugin'); ?></h3>
 <p><?php _e('You can choose how deeply into nested replies Greg&#8217;s Threaded Comment Numbering plugin should display hierarchical numbering, up to the full 10 levels supported by WordPress. For example, hierarchical numbering up through a depth of 2 will display a number for comment 5 and its replies numbered 5.1, 5.2, etc). With more deeply nested replies, hierarchical numbering can become cumbersome (e.g., comment number 12.19.6.4), so if you choose to stop hierarchical numbering sooner than the level at which you permit comments, you can choose what to display in lieu of a number.', 'gtcn-plugin'); ?></p>
-<p><?php _e('Finally, as of version 2.7, WordPress has severe problems handling orphaned comments &mdash; where threading is enabled at a given depth (say, 2), but comments exist which were previously entered at a deeper depth (say, 3) &mdash; especially when paging is also enabled. You can choose what to display when this happens. When threading is disabled completely in the WordPress discussion settings, all comments will be correctly ordered, regardless of the setting specified for orphaned replies. Note that for WordPress 2.7, disabling comment threading is very much not the same as setting threading to depth 1.', 'gtcn-plugin'); ?></p>
+<p><?php _e('Finally, as of versions 2.7 and later, WordPress has severe problems ordering comments which have been &#8216;orphaned&#8217; &mdash; either as a result of a threaded comment&#8217;s parent having been deleted, or as a result of threading being enabled at a given depth (say, 2) which is lower than the depth at which the comment was originally entered (say, 3). You can choose what to display when this happens. When threading is disabled completely in the WordPress discussion settings, all comments will be correctly ordered, regardless of the setting specified for orphaned replies. Note that for WordPress 2.7 and later, disabling comment threading is very much not the same as setting threading to depth 1.', 'gtcn-plugin'); ?></p>
 <table class="form-table">
   <tr>
 	  <th scope="row" valign="top"><?php _e('Maximum Depth to Display Hierarchical Numbering', 'gtcn-plugin'); ?></th>
@@ -77,6 +74,15 @@ $plugin_page = ' <a href="http://counsellingresource.com/features/2009/01/27/thr
 		  <ul>
 			  <li><input type="radio" name="gtcn_orphan_replacement" value="0"<?php checked('0', get_option('gtcn_orphan_replacement')); ?> /> <?php _e('Display Nothing (recommended)', 'gtcn-plugin'); ?></li>
 			  <li><input type="radio" name="gtcn_orphan_replacement" value="1"<?php checked('1', get_option('gtcn_orphan_replacement')); ?> /> <?php _e('Display Brackets: [ ]', 'gtcn-plugin'); ?></li>
+		  </ul>
+	  </td> 
+  </tr>
+  <tr>
+	  <th scope="row" valign="top"><?php _e('Explicitly Check for Comments With Deleted Parents?', 'gtcn-plugin'); ?></th>
+	  <td>
+		  <ul>
+			  <li><input type="radio" name="gtcn_do_parent_check" value="0"<?php checked('0', get_option('gtcn_do_parent_check')); ?> /> <?php _e('Don&#8217;t Bother - faster performance', 'gtcn-plugin'); ?></li>
+			  <li><input type="radio" name="gtcn_do_parent_check" value="1"<?php checked('1', get_option('gtcn_do_parent_check')); ?> /> <?php _e('Check for Deleted Parents - slightly slower performance', 'gtcn-plugin'); ?></li>
 		  </ul>
 	  </td> 
   </tr>

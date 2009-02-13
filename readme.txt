@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,13 +14,9 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Increased support for hierarchical numbering of threaded comments from 2 levels up to the full 10 levels deep supported by WordPress.
+* Option for more aggressive handling of bugs in the way WordPress orders orphaned threads: explicitly check whether a comment's parent has been deleted before trying to number it (since WordPress displays orphaned comments in the wrong order).
 
-* 'Jumble Count' mode if you'd like your numbers to match the order in which comments were received, rather than the order in which they are displayed.
-
-* Rewritten core numbering routines make an already speedy plugin even faster and more efficient.
-
-For more details on what's new in this release, please see the update announcement: [New Version of Comment Numbering Plugin Adds Features and Fixes](http://counsellingresource.com/features/2009/02/03/comment-numbering-plugin-new-version/)
+For more details on what's new in the latest main release, version 1.1, please see the update announcement: [New Version of Comment Numbering Plugin Adds Features and Fixes](http://counsellingresource.com/features/2009/02/03/comment-numbering-plugin-new-version/)
 
 = Background =
 
@@ -90,6 +86,10 @@ I've moved this section of the README to the main information page for the plugi
 2. Hierarchical comment numbering using the default theme and the provided styling
 
 == Revision History ==
+
+**1.1.2, 13 February 2009**
+
+* In return for a slight performance hit, Greg's Threaded Comment Numbering plugin can now check explicitly whether a threaded comment has been orphaned by having its parent comment deleted -- in which case, WordPress may display the comment in the wrong order. Due to the slight decrease in performance, this feature should only be enabled if you are experiencing problems with orphaned comment ordering.
 
 **1.1.1, 3 February 2009**
 
