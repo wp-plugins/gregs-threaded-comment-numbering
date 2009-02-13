@@ -3,7 +3,7 @@ if( !defined( 'ABSPATH' ) && !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit();
 } else {
 	   if (current_user_can('delete_plugins')) {
-		   $gtcn_settings = array ('gtcn_nesting_replacement','gtcn_orphan_replacement','gtcn_use_styles','gtcn_thank_you','gtcn_thank_you_message');
+		   $gtcn_settings = array ('gtcn_nesting_replacement','gtcn_deepest_display','gtcn_orphan_replacement','gtcn_use_styles','gtcn_do_parent_check','gtcn_jumble_count','gtcn_thank_you','gtcn_thank_you_message');
 		   // Nuke the options
 		   echo '<div id="message" class="updated fade">';
 		   foreach($gtcn_settings as $setting) {
