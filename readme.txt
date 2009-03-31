@@ -3,22 +3,32 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.7
-Stable tag: 1.0.3
+Tested up to: 2.7.1
+Stable tag: 1.2
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
 == Description ==
 
-The introduction of WordPress 2.7 brought with it significant new capabilities for threading and paging comments, but these same changes in WordPress mean that well established methods for numbering comments -- like including a basic incrementing counter within your template code -- no longer do the trick. Fortunately, taking advantage of modern comment handling features like paging and threading doesn't have to mean giving up comment numbering.
+This plugin numbers your comments sequentially and hierarchically, with full support for the new comment features introduced in WordPress 2.7 -- including threading, paging, and your choice of ascending or descending date order.
 
-Coupled with a new template function for displaying comments which debuted in WordPress 2.7, Greg's Threaded Comment Numbering plugin provides accurate sequential numbering for each comment, including hierarchical numbering for the first level of threaded comments (e.g., comment number 2 and its replies numbered 2.1, 2.2, 2.3, etc.).
+= New in This Version =
+
+* Higher performance, several minor enhancements, and a revamped administrative interface
+
+For more details on what's new in the latest main release, version 1.2, please see the update announcement: [WordPress Threaded Comment Numbering Plugin Updated](http://counsellingresource.com/features/2009/03/31/threaded-comment-plugin-updated)
+
+= Background =
+
+The introduction of WordPress 2.7 brought with it significant new capabilities for threading and paging comments, but these same changes in WordPress mean that well established methods for numbering comments -- like including a basic incrementing counter within your template code -- no longer do the trick. Fortunately, taking advantage of modern comment handling features like paging and threading doesn't have to mean giving up comment numbering altogether.
+
+Coupled with a new template function for displaying comments which debuted in WordPress 2.7, Greg's Threaded Comment Numbering plugin provides accurate sequential numbering for each comment, including hierarchical numbering up to the full 10 levels supported by WordPress.
 
 The plugin numbers comments accurately whether you choose to display them in ascending or descending date order, on multiple pages or on one long page, and with or without threading enabled. It also handles pingback and trackback numbering.
 
 For coders, the plugin provides additional configuration options via direct calls to the function that handles the numbering.
 
-For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
+For more information, please see this plugin's original information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Installation ==
 
@@ -76,6 +86,25 @@ I've moved this section of the README to the main information page for the plugi
 2. Hierarchical comment numbering using the default theme and the provided styling
 
 == Revision History ==
+
+**1.2, 31 March 2009**
+
+* This version brings higher performance, several minor enhancements, and a revamped administrative interface; it is recommended for all users.
+
+**1.1.2, 13 February 2009**
+
+* In return for a slight performance hit, Greg's Threaded Comment Numbering plugin can now check explicitly whether a threaded comment has been orphaned by having its parent comment deleted -- in which case, WordPress may display the comment in the wrong order. Due to the slight decrease in performance, this feature should only be enabled if you are experiencing problems with orphaned comment ordering.
+
+**1.1.1, 3 February 2009**
+
+* Folks who didn't notice the README note to update their preferred level of hierarchical numbering will find that the code now does it for them
+
+**1.1, 2 February 2009**
+
+* New feature: increased hierarchical numbering from 2 levels to 10 levels
+* New feature: 'jumble count' mode for time-ordered numbering
+* Enhancement: rewritten core numbering routines for significantly improved efficiency
+* Fixed: cleaned up 'path to url' text (left over from WordPress Codex) in the provided basic callback function, restoring default avatar features for users calling the basic function
 
 **1.0.3, 30 January 2009**
 
