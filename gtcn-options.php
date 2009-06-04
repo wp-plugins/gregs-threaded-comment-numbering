@@ -1,5 +1,4 @@
 <?php
-
 require_once('gtcn-options-functions.php');
 
 function gtcn_options_setngo() {

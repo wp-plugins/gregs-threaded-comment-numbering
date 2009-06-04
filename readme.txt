@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.7.1
-Stable tag: 1.2.1
+Tested up to: 2.8-beta2
+Stable tag: 1.2.2
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,7 +14,8 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Higher performance, several minor enhancements, and a revamped administrative interface
+* Improved documentation
+* Support for WordPress 2.8
 
 For more details on what's new in the latest main release, version 1.2, please see the update announcement: [WordPress Threaded Comment Numbering Plugin Updated](http://counsellingresource.com/features/2009/03/31/threaded-comment-plugin-updated)
 
@@ -44,9 +45,11 @@ With a single line of code -- either within `comments.php` or within a callback 
 
 *Basic Usage*
 
-If you are using the default theme, or another theme which already supports the new WordPress 2.7 comments features but does not use its own callback function, just replace `wp_list_comments()` in your theme's `comments.php` file with `wp_list_comments('callback=gtcn_basic_callback')`. (See below for a note on safe wrapping of plugin-dependent function calls.)
+If you are using the default theme, or another theme which already supports the new WordPress 2.7 comments features but does not use its own callback function, you may replace `wp_list_comments()` in your theme's `comments.php` file with `wp_list_comments('callback=gtcn_basic_callback')`. (See below for a note on safe wrapping of plugin-dependent function calls.)
 
-The plugin includes some basic styling information suitable for the default theme, but if you'd rather style numbers yourself, you can disable this feature in the plugin's settings page and provide your own within your template's CSS file.
+Please note, however, that relying on the basic included callback function means that any existing structure or styling you have put in place for your comments will be replaced by what is in the callback function. It is preferable to create your own callback function, drop it into `functions.php`, and use that to ensure your comments are structured and styled exactly the way you'd like them to be -- see 'Advanced Usage' below for more on this option.
+
+The plugin does include some basic styling information suitable for the default theme, but if you'd rather style numbers yourself, you can disable this feature in the plugin's settings page and provide your own within your template's CSS file.
 
 *Advanced Usage*
 
@@ -85,7 +88,16 @@ I've moved this section of the README to the main information page for the plugi
 1. Basic threaded comment numbering configuration options
 2. Hierarchical comment numbering using the default theme and the provided styling
 
+== Known Issues ==
+
+The version of the Intense Debate plugin which is current as of this writing overrides themes' existing comment code, rendering it incompatible with any theme or plugin designed to use the full capabilities of the new `wp_list_comments` introduced in WordPress 2.7. This means that regardless of what changes you make to your theme's comment code (such as calling this plugin), those changes won't show up while your comments are being controlled by Intense Debate.
+
 == Revision History ==
+
+**1.2.2, 4 June 2009**
+
+* Updated documentation
+* Support for WordPress 2.8
 
 **1.2.1, 15 April 2009**
 
