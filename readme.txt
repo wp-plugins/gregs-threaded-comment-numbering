@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.8-beta2
-Stable tag: 1.2.2
+Tested up to: 2.8
+Stable tag: 1.2.3
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -93,6 +93,10 @@ I've moved this section of the README to the main information page for the plugi
 The version of the Intense Debate plugin which is current as of this writing overrides themes' existing comment code, rendering it incompatible with any theme or plugin designed to use the full capabilities of the new `wp_list_comments` introduced in WordPress 2.7. This means that regardless of what changes you make to your theme's comment code (such as calling this plugin), those changes won't show up while your comments are being controlled by Intense Debate.
 
 == Revision History ==
+
+**1.2.3, 11 June 2009**
+
+* Fully tested with final release of WordPress 2.8
 
 **1.2.2, 4 June 2009**
 
