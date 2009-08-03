@@ -32,6 +32,7 @@ $options_set = array(
 	array("deepest_display", "2", 'intval'),
 	array("orphan_replacement", "0", 'intval'),
 	array("use_styles", "1", 'intval'),
+	array("no_wrapper", "0", 'intval'),
 	array("do_parent_check", "0", 'intval'),
 	array("jumble_count", "0", 'intval'),
 	),

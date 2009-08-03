@@ -3,7 +3,7 @@
 Plugin Name: Greg's Threaded Comment Numbering
 Plugin URI: http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/
 Description: For WordPress 2.7 and above, this plugin numbers comments sequentially, including an hierarchical count up to ten levels deep (e.g., replies to comment number 2 will be numbered as 2.1, 2.2, 2.3 etc.).
-Version: 1.2.3
+Version: 1.2.4
 Author: Greg Mulhauser
 Author URI: http://counsellingresource.com/
 */
@@ -181,6 +181,8 @@ function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentn
 	$before = "<div class=\"$wrapclass\">";
 
 	$after = '</div>';
+	
+	if ($this->opt('no_wrapper')) $before = $after = '';
 
 	if ($this->opt('deepest_display') == '0') // for folks who don't read the readme
 		 update_option("{$prefix}_deepest_display",'2');
@@ -306,7 +308,7 @@ if (is_admin()) {
    } // end admin-only stuff
 else
    {
-   $gtcn = new gregsThreadedCommentNumbering('gtcn', '1.2.3', "Greg's Threaded Comment Numbering");
+   $gtcn = new gregsThreadedCommentNumbering('gtcn', '1.2.4', "Greg's Threaded Comment Numbering");
    function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber') {
 	  global $gtcn;
 	  return $gtcn->comment_numbering($comment_ID, $args, $wrapclass);

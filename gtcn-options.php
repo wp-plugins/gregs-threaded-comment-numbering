@@ -40,6 +40,6 @@ $options_handler->display_options($settings_prefix,$problems,$name,$dofull,$dona
 return;
 } // end displaying the options
 
-gtcn_options_setngo();
+if (current_user_can('manage_options')) gtcn_options_setngo();
 
 ?>
