@@ -16,7 +16,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 * Option to display comment number without a `div` wrapper 
 * Documentation tweaks
-* Added support for [Sustainable Plugin Sponsorship Network](http://pluginsponsors.com/)
+* Added support for [Sustainable Plugins Sponsorship Network](http://pluginsponsors.com/)
 
 For more details on what's new in the latest main release, version 1.2, please see the update announcement: [WordPress Threaded Comment Numbering Plugin Updated](http://counsellingresource.com/features/2009/03/31/threaded-comment-plugin-updated)
 
@@ -106,10 +106,6 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 = 1.0, 27 January 2009 =
 * Initial public release
-
-== More Information ==
-
-For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Fine Print ==
 
