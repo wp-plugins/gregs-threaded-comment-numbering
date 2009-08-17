@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.8.2
-Stable tag: 1.2.4
+Tested up to: 2.8.4
+Stable tag: 1.2.6
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,9 +14,8 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Option to display comment number without a `div` wrapper 
-* Documentation tweaks
-* Added support for [Sustainable Plugins Sponsorship Network](http://pluginsponsors.com/)
+* Documentation corrected for advanced usage
+* Fully tested with 2.8.4 (no changes)
 
 For more details on what's new in the latest main release, version 1.2, please see the update announcement: [WordPress Threaded Comment Numbering Plugin Updated](http://counsellingresource.com/features/2009/03/31/threaded-comment-plugin-updated)
 
@@ -65,6 +64,13 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Changelog ==
 
+= 1.2.6, 17 August 2009 =
+* Options page bugfix for users on old PHP4 installations
+
+= 1.2.5, 12 August 2009 =
+* Documentation corrected for advanced usage -- thanks to Mark
+* Fully tested with 2.8.4 (no changes)
+
 = 1.2.4, 3 August 2009 =
 * Option to display comment number without `div` wrapper -- thanks to Gabriel
 * Documentation tweaks
@@ -106,6 +112,10 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 = 1.0, 27 January 2009 =
 * Initial public release
+
+== More Information ==
+
+For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Fine Print ==
 
