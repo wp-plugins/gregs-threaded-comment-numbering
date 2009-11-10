@@ -13,17 +13,19 @@ return;
 function __construct($plugin_prefix,$location_full,$location_local,$options_page_details) {
 $this->plugin_prefix = $plugin_prefix;
 $this->options_page_details = $options_page_details;
-   add_filter( "plugin_action_links_{$location_local}", array(&$this,'plugin_settings_link'));
-   add_action('admin_menu', array(&$this,'plugin_menu'));
-   add_action('admin_init', array(&$this,'admin_init') );
-   add_action('admin_head', array(&$this,'styles') );
-   register_activation_hook($location_full, array(&$this,'activate') );
-
+// set up all our admin necessities
+add_filter( "plugin_action_links_{$location_local}", array(&$this,'plugin_settings_link'));
+add_action('admin_menu', array(&$this,'plugin_menu'));
+add_action('admin_init', array(&$this,'admin_init') );
+add_action('admin_head', array(&$this,'styles') );
+register_activation_hook($location_full, array(&$this,'activate') );
 return;
 } // end constructor
 
-function grab_settings() {
-// array keys correspond to the page of options on which the option gets handled
+function grab_settings() { // simple holder for all our plugin's settings
+
+// array keys correspond to the page of options on which that option gets handled
+// option array itself holds option name, default value, sanitization function
 
 $options_set = array(
 'default' => array(
@@ -45,7 +47,7 @@ $options_set = array(
 return $options_set;
 } // end settings grabber
 
-function activate() {
+function activate() { // on activation, set up our options
 $options_set = $this->grab_settings();
 $prefix = $this->plugin_prefix . '_';
 foreach ($options_set as $optionset=>$optionarray) {
@@ -56,7 +58,7 @@ foreach ($options_set as $optionset=>$optionarray) {
 return;
 }
 
-function admin_init(){
+function admin_init(){ // register our settings
 $options_set = $this->grab_settings();
 $prefix_setting = $this->plugin_prefix . '_options_';
 $prefix = $this->plugin_prefix . '_';
@@ -68,13 +70,13 @@ foreach ($options_set as $optionset=>$optionarray) {
 return;
 }
 
-function plugin_menu() {
+function plugin_menu() { // add our options page
 $details = $this->options_page_details;
   add_options_page("{$details[0]}", "{$details[1]}", 'manage_options', "{$details[2]}");
 return;
 }
 
-function plugin_settings_link($links) {
+function plugin_settings_link($links) { // add our settings link to entry in plugin list
 $prefix = $this->plugin_prefix;
 $here = str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); // get plugin folder name
 $settings = "options-general.php?page={$here}{$prefix}-options.php";
@@ -83,7 +85,8 @@ array_unshift( $links, $settings_link );
 return $links;
 } // end settings link
 
-function styles() {
+function styles() { // we'll need a few styles for our options pages
+// todo: load this only when we're actually looking at one of our options pages?
 $prefix = $this->plugin_prefix . '_';
 echo <<<EOT
 <style type="text/css">
@@ -99,7 +102,6 @@ echo <<<EOT
 .{$prefix}fine_print {font-size:.8em;font-style:italic;}
 </style>
 EOT;
-return;
 return;
 } // end admin styles
 
