@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.8.2
-Stable tag: 1.2.4
+Tested up to: 2.9
+Stable tag: 1.3.1
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,11 +14,9 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Option to display comment number without a `div` wrapper 
-* Documentation tweaks
-* Added support for [Sustainable Plugins Sponsorship Network](http://pluginsponsors.com/)
+* Support for 'trash' comment status introduced in WordPress 2.9
 
-For more details on what's new in the latest main release, version 1.2, please see the update announcement: [WordPress Threaded Comment Numbering Plugin Updated](http://counsellingresource.com/features/2009/03/31/threaded-comment-plugin-updated)
+For more details on what's new in the latest main release, version 1.3, please see the update announcement: [Two WordPress Plugins Updated for 2.9](http://counsellingresource.com/features/2009/12/02/wordpress-plugins-updated/)
 
 = Background =
 
@@ -65,6 +63,24 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Changelog ==
 
+= 1.3.1, 3 December 2009 =
+* Whoops, previous version accidentally used method chaining and broke support for PHP4 users; that's fixed now
+
+= 1.3, 2 December 2009 =
+* Support for 'trash' comment status introduced in WordPress 2.9
+* Tested with WordPress 2.9 beta 2
+
+= 1.2.7, 10 November 2009 =
+* Minor update to configuration pages
+* Fully tested with 2.8.5 (no changes)
+
+= 1.2.6, 17 August 2009 =
+* Options page bugfix for users on old PHP4 installations
+
+= 1.2.5, 12 August 2009 =
+* Documentation corrected for advanced usage -- thanks to Mark
+* Fully tested with 2.8.4 (no changes)
+
 = 1.2.4, 3 August 2009 =
 * Option to display comment number without `div` wrapper -- thanks to Gabriel
 * Documentation tweaks
@@ -106,6 +122,10 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 = 1.0, 27 January 2009 =
 * Initial public release
+
+== More Information ==
+
+For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Fine Print ==
 
