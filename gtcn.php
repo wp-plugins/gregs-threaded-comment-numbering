@@ -3,7 +3,7 @@
 Plugin Name: Greg's Threaded Comment Numbering
 Plugin URI: http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/
 Description: For WordPress 2.7 and above, this plugin numbers comments sequentially, including an hierarchical count up to ten levels deep (e.g., replies to comment number 2 will be numbered as 2.1, 2.2, 2.3 etc.).
-Version: 1.2.4
+Version: 1.3.2
 Author: Greg Mulhauser
 Author URI: http://counsellingresource.com/
 */
@@ -111,23 +111,35 @@ function comment_counter_db_lookup ($comment_ID,$args = array(),$forcesimple=fal
 ### Function: Determine Comment Depth
 function get_depth($comment_ID = 0) { // recursive depth check
 global $wpdb;
-$thiscomment = get_comment( $comment_ID );
-$parent = $thiscomment->comment_parent;
-if (0 == $parent) // must NOT use '===' because empty result, where we do not have a comment parent at all because it has been deleted, needs to evaluate as true
+$comment = get_comment( $comment_ID );
+$parent = $comment->comment_parent;
+if ((0 == $parent) || ($this->parent_trashed($comment))) // must NOT use '===' because empty result, where we do not have a comment parent at all because it has been deleted, needs to evaluate as true
 return '1'; 
 else return $this->get_depth($parent) + 1;
 }
 
-### Function: Does parent actually exist?
+### Function: Do parents actually exist?
 function parents_exist($comment_ID = 0) { // explicit check for comments with deleted parents
 if ($this->opt('do_parent_check')) {
 	global $wpdb;
-	$thiscomment = get_comment( $comment_ID );
-	$parent = $thiscomment->comment_parent;
+	$comment = get_comment( $comment_ID );
+	$parent = $comment->comment_parent;
 	if ($parent == '') return false;
+	elseif ($this->parent_trashed($comment)) return false;
 	elseif (0 == $parent) return true;
 	else return $this->parents_exist($parent);
 	} else {return true;}
+}
+
+### Function: Is parent in the trash?
+function parent_trashed($comment) { // check if comment's immediate parent is in trash
+global $wpdb;
+$parent = $comment->comment_parent;
+if ('' == $parent) return false; // no parent, no trash
+$approval = get_comment($parent); // have to do this in two steps for PHP4 compatibility
+$approval = $approval->comment_approved;
+if ($approval == 'trash') return true;
+else return false;
 }
 
 ### Function: Build output
@@ -164,6 +176,7 @@ echo $before . $this->currentnumber . $after;
 return;
 }
 
+
 ### Function: Greg's Threaded Comment Numbering Core
 function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentnumber' ) {
 // this would all be so easy, were it not for threading and paging and reversing, which make counting go all funky
@@ -172,9 +185,8 @@ function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentn
 
 	$prefix = $this->plugin_prefix;
 
-	if ( !$comment = get_comment( $comment_ID ) ) // check also grabs $comment
-		 return; // whoops
-
+	$comment = get_comment($comment_ID);
+	
 	if ( !( 1 == $comment->comment_approved )) // quick test for the case where a user has entered a comment which is in moderation, but that same user's subsequent comment is approved, in which case do not do anything with the number for the moderated comment
 		 return;
 
@@ -203,9 +215,18 @@ function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentn
 	   return;
 	   } // end of counting where there is no threading
 
+// Jumble count instead?
+
+	if (($this->opt('jumble_count') == 1)) {
+	   $this->do_jumble_count($comment_ID,$args,$before,$after);
+	   return;
+	   } // end jumble count
+
+// Some quick traps
+
 	$depth = $this->get_depth($comment_ID);
 
-	if (($depth > $args['max_depth']) || ! $this->parents_exist($comment_ID)) { // trap for comment orphaned by too low a depth or by deleted parent
+	if (($depth > $args['max_depth']) || ! $this->parents_exist($comment_ID) || $this->parent_trashed($comment)) { // trap for comment orphaned by too low a depth or by deleted or trashed parent
 		echo $before . $orphan_replacement . $after;
 		return;
 		}
@@ -214,10 +235,6 @@ function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentn
 		return;
 		}
 		 
-	if (($this->opt('jumble_count') == 1)) {
-	   $this->do_jumble_count($comment_ID,$args,$before,$after);
-	   return;
-	   } // end jumble count
 
 // Begin the real stuff
 
@@ -308,7 +325,7 @@ if (is_admin()) {
    } // end admin-only stuff
 else
    {
-   $gtcn = new gregsThreadedCommentNumbering('gtcn', '1.2.4', "Greg's Threaded Comment Numbering");
+   $gtcn = new gregsThreadedCommentNumbering('gtcn', '1.3.2', "Greg's Threaded Comment Numbering");
    function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber') {
 	  global $gtcn;
 	  return $gtcn->comment_numbering($comment_ID, $args, $wrapclass);

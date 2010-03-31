@@ -43,7 +43,7 @@ var $path; // where are we?
 var $submenu; // plain name of submenu we're displaying
 var $thispage; // name of this page, from keys in var $pages
 
-function ghpseoOptionsHandler($swap = array(), $pages = array(),$domain,$plugin_prefix='',$subdir='',$instname='') {
+function gtcnOptionsHandler($swap = array(), $pages = array(),$domain,$plugin_prefix='',$subdir='',$instname='') {
 $this->__construct($swap,$pages,$domain,$plugin_prefix,$subdir,$instname);
 return;
 } 
@@ -175,7 +175,7 @@ else {
 $warningprefix = __('Warning: Possible conflict with', $domain);
 $warningend = ($remedy != '') ? $remedy : __('For best results, please disable the interfering plugin',$domain);
 $message = <<<EOT
-<div class="{$warningclass}">
+<div class="{$warningclass} error fade">
 <p><strong><em>{$warningprefix} '{$conflict}'</em></strong></p>
 <p>{$warning} <em>{$name}</em>.</p>
 <p>{$warningend} '{$conflict}'</strong>.</p>
