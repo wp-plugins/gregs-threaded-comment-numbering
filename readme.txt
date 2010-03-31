@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.9
-Stable tag: 1.3.1
+Tested up to: 2.9.2
+Stable tag: 1.3.2
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,7 +14,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Support for 'trash' comment status introduced in WordPress 2.9
+* Documentation updates
 
 For more details on what's new in the latest main release, version 1.3, please see the update announcement: [Two WordPress Plugins Updated for 2.9](http://counsellingresource.com/features/2009/12/02/wordpress-plugins-updated/)
 
@@ -48,6 +48,10 @@ You can deactivate Greg's Threaded Comment Numbering plugin via the plugins admi
 
 However, if you would like to remove the plugin completely, just disable it via the plugins administration page, then select it from the list of recently deactivated plugins and choose "Delete" from the admin menu. This will not only delete the plugin, but it will also run a special routine included with the plugin which will completely remove its preferences from the database.
 
+= Known Issues =
+
+The version of the Intense Debate plugin which is current as of this writing overrides themes' existing comment code, rendering it incompatible with any theme or plugin designed to use the full capabilities of the new `wp_list_comments` introduced in WordPress 2.7. This means that regardless of what changes you make to your theme's comment code (such as calling this plugin), those changes won't show up while your comments are being controlled by Intense Debate.
+
 == Frequently Asked Questions ==
 
 I've moved this section of the README to the main information page for the plugin, where it can be updated independently of new releases.
@@ -57,11 +61,15 @@ I've moved this section of the README to the main information page for the plugi
 1. Basic threaded comment numbering configuration options
 2. Hierarchical comment numbering using the default theme and the provided styling
 
-== Known Issues ==
+== Upgrade Notice ==
 
-The version of the Intense Debate plugin which is current as of this writing overrides themes' existing comment code, rendering it incompatible with any theme or plugin designed to use the full capabilities of the new `wp_list_comments` introduced in WordPress 2.7. This means that regardless of what changes you make to your theme's comment code (such as calling this plugin), those changes won't show up while your comments are being controlled by Intense Debate.
+= 1.3.2, 31 March 2010 =
+* Documentation updates
 
 == Changelog ==
+
+= 1.3.2, 31 March 2010 =
+* Documentation updates
 
 = 1.3.1, 3 December 2009 =
 * Whoops, previous version accidentally used method chaining and broke support for PHP4 users; that's fixed now
