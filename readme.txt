@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 2.9.2
-Stable tag: 1.3.2
+Tested up to: 3.0-alpha
+Stable tag: 1.3.3
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,7 +14,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Documentation updates
+* Enhanced admin pages now support user-configurable section boxes which can be re-ordered or closed
 
 For more details on what's new in the latest main release, version 1.3, please see the update announcement: [Two WordPress Plugins Updated for 2.9](http://counsellingresource.com/features/2009/12/02/wordpress-plugins-updated/)
 
@@ -63,10 +63,13 @@ I've moved this section of the README to the main information page for the plugi
 
 == Upgrade Notice ==
 
-= 1.3.2, 31 March 2010 =
-* Documentation updates
+= 1.3.3, 6 April 2010 =
+* Enhanced admin pages now support user-configurable section boxes which can be re-ordered or closed
 
 == Changelog ==
+
+= 1.3.3, 6 April 2010 =
+* Enhanced admin pages now support user-configurable section boxes which can be re-ordered or closed
 
 = 1.3.2, 31 March 2010 =
 * Documentation updates
