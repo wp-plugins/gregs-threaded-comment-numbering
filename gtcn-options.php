@@ -1,4 +1,11 @@
 <?php
+
+if (!function_exists ('is_admin')) {
+   header('Status: 403 Forbidden');
+   header('HTTP/1.1 403 Forbidden');
+   exit();
+   }
+
 require_once('gtcn-options-functions.php');
 
 function gtcn_options_setngo() {
@@ -34,7 +41,9 @@ $pages = array (
 			   ),
 			   );
 
-$options_handler = new gtcnOptionsHandler($replacements,$pages,$domain,$plugin_prefix,$subdir,$instname); // prepares settings
+$args = compact('domain','plugin_prefix','subdir','instname');
+
+$options_handler = new gtcnOptionsHandler($args,$replacements,$pages); // prepares settings
 $options_handler->display_options($settings_prefix,$problems,$name,$dofull,$donated);
 
 return;
