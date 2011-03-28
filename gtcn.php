@@ -3,7 +3,7 @@
 Plugin Name: Greg's Threaded Comment Numbering
 Plugin URI: http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/
 Description: For WordPress 2.7 and above, this plugin numbers comments sequentially, including an hierarchical count up to ten levels deep (e.g., replies to comment number 2 will be numbered as 2.1, 2.2, 2.3 etc.).
-Version: 1.4.4
+Version: 1.4.5
 Author: Greg Mulhauser
 Author URI: http://counsellingresource.com/
 */
@@ -192,7 +192,7 @@ class gregsThreadedCommentNumbering {
 	}
 
 	### Function: Greg's Threaded Comment Numbering Core
-	function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentnumber' ) {
+	function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentnumber', $mode = 'echo' ) {
 		// this would all be so easy, were it not for threading and paging and reversing, which make counting go all funky
 	
 		global $wpdb;
@@ -290,7 +290,10 @@ class gregsThreadedCommentNumbering {
 		$this->currentnumber[$depth + 1] = ''; // and start over for the next lower
 		$this->parenttrap[$depth] = $comment_ID; // save this ID in case of use by further children
 	
-		echo $before . $this->build_output($this->currentnumber) . $after;
+		$out = $before . $this->build_output($this->currentnumber) . $after;
+		// support quiet return of the output
+		if ('quiet' == $mode) return $out;
+		else echo $out;
 		return;
 		
 	} // end comment_numbering
@@ -337,10 +340,10 @@ if (is_admin()) {
 	gtcn_setup_setngo();
 } // end admin-only stuff
 else {
-	$gtcn = new gregsThreadedCommentNumbering('gtcn', '1.4.4', "Greg's Threaded Comment Numbering");
-	function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber') {
+	$gtcn = new gregsThreadedCommentNumbering('gtcn', '1.4.5', "Greg's Threaded Comment Numbering");
+	function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber', $mode = 'echo') {
 		global $gtcn;
-		return $gtcn->comment_numbering($comment_ID, $args, $wrapclass);
+		return $gtcn->comment_numbering($comment_ID, $args, $wrapclass, $mode);
 	}
 } // end non-admin stuff
 
