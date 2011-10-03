@@ -3,8 +3,8 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 3.0-RC1
-Stable tag: 1.4
+Tested up to: 3.2.1
+Stable tag: 1.4.6
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,7 +14,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Major reduction in database footprint in preparation for WordPress 3.0
+* Minor code cleanups
 
 For more details on what's new in the latest main release, version 1.4, please see the update announcement: [WordPress Plugins Get Performance Boost](http://counsellingresource.com/features/2010/06/01/wordpress-plugins-performance-boost/)
 
@@ -63,10 +63,30 @@ I've moved this section of the README to the main information page for the plugi
 
 == Upgrade Notice ==
 
-= 1.4, 1 June 2010 =
-* Major reduction in database footprint in preparation for WordPress 3.0
+= 1.4.6, 3 October 2011 =
+* Minor code cleanups
 
 == Changelog ==
+
+= 1.4.6, 3 October 2011 =
+* Minor code cleanups
+
+= 1.4.5, 28 March 2011 =
+* Bugfix: the comment number can now be returned quietly (without echo) for further use by theme code
+
+= 1.4.4, 29 January 2011 =
+* Minor code cleanup
+* Testing with WP 3.1 Release Candidate 3
+
+= 1.4.3, 20 January 2011 =
+* Minor code cleanup
+* Testing with WP 3.1 Release Candidate 2
+
+= 1.4.2, 24 June 2010 =
+* Better workaround for WordPress 3.0's problems initialising plugins properly under multisite
+
+= 1.4.1, 24 June 2010 =
+* Workaround for rare problem where WordPress interferes with a newly activated plugin's ability to add options when using multisite/network mode
 
 = 1.4, 1 June 2010 =
 * Major reduction in database footprint in preparation for WordPress 3.0
