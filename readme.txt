@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 1.4.6
+Stable tag: 1.4.7
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -14,9 +14,9 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Minor code cleanups
+* Documentation updates
 
-For more details on what's new in the latest main release, version 1.4, please see the update announcement: [WordPress Plugins Get Performance Boost](http://counsellingresource.com/features/2010/06/01/wordpress-plugins-performance-boost/)
+For more details on what's new in the latest main release, version 1.4, please see the update announcement: [WordPress Plugins Get Performance Boost](http://gregsplugins.com/lib/2010/06/01/wordpress-plugins-performance-boost/)
 
 = Background =
 
@@ -28,7 +28,7 @@ The plugin numbers comments accurately whether you choose to display them in asc
 
 For coders, the plugin provides additional configuration options via direct calls to the function that handles the numbering.
 
-For more information, please see this plugin's original information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
+For more information, please see the plugin's 'Instructions' tab in the WordPress admin interface.
 
 == Installation ==
 
@@ -54,7 +54,7 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Frequently Asked Questions ==
 
-I've moved this section of the README to the main information page for the plugin, where it can be updated independently of new releases.
+Please see the [Greg's Plugins FAQ](http://gregsplugins.com/lib/faq/).
 
 == Screenshots ==
 
@@ -63,10 +63,13 @@ I've moved this section of the README to the main information page for the plugi
 
 == Upgrade Notice ==
 
-= 1.4.6, 3 October 2011 =
-* Minor code cleanups
+= 1.4.7, 27 October 2011 =
+* Documentation updates
 
 == Changelog ==
+
+= 1.4.7, 27 October 2011 =
+* Documentation updates
 
 = 1.4.6, 3 October 2011 =
 * Minor code cleanups
@@ -159,10 +162,6 @@ I've moved this section of the README to the main information page for the plugi
 
 = 1.0, 27 January 2009 =
 * Initial public release
-
-== More Information ==
-
-For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Fine Print ==
 
