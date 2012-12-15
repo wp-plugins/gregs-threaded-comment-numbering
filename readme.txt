@@ -3,22 +3,21 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 3.2.1
-Stable tag: 1.4.8
+Tested up to: 3.5
+Stable tag: 1.4.9
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
 == Description ==
 
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
+
 This plugin numbers your comments sequentially and hierarchically, with full support for the new comment features available in WordPress 2.7 and later -- including threading, paging, and your choice of ascending or descending date order.
 
 = New in This Version =
 
-* Removed PluginSponsors.com code following threats that the plugin would be expelled from the plugin repository for using the code to display sponsorship messages
-
-For more details on the threats which have removed financial support for this plugin, see [GregsPlugins.com](http://gregsplugins.com/lib/2011/11/26/automattic-bullies/). Following the initial threats, we have now been told that NO type of passive loading of an external resource for advertising purposes or sponsorship purposes will be permitted without explicit prior opt-in by the user -- i.e., no JavaScript, no iframes, no plain image loading of any kind. If you see any type of advertising of any kind in any plugin which loads any resource from any external server, you will know that this policy is not yet being fairly, uniformly and impartially applied. When it is fairly and uniformly and impartially applied, you will no longer see any type of advertising loading any external resource unless you have explicitly opted into seeing it.
-
-For more details on what's new in the latest main release, version 1.4, please see the update announcement: [WordPress Plugins Get Performance Boost](http://gregsplugins.com/lib/2010/06/01/wordpress-plugins-performance-boost/)
+* Replaced some ancient admin page code to enable loading the plugin through a symbolic link.
+* Confirmed 3.5 compatibility.
 
 = Background =
 
@@ -33,6 +32,8 @@ For coders, the plugin provides additional configuration options via direct call
 For more information, please see the plugin's 'Instructions' tab in the WordPress admin interface.
 
 == Installation ==
+
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
 
 1. Unzip the plugin archive
 2. Upload the entire folder `gregs-threaded-comment-numbering` to `/wp-content/plugins/`
@@ -56,7 +57,7 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Frequently Asked Questions ==
 
-Please see the [Greg's Plugins FAQ](http://gregsplugins.com/lib/faq/).
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
 
 == Screenshots ==
 
@@ -65,10 +66,15 @@ Please see the [Greg's Plugins FAQ](http://gregsplugins.com/lib/faq/).
 
 == Upgrade Notice ==
 
-= 1.4.8, 26 November 2011 =
-* Removed PluginSponsors.com code following threats that the plugin would be expelled from the plugin repository for using the code to display sponsorship messages
+= 1.4.9, 15 December 2012 =
+* Replaced some ancient admin page code to enable loading the plugin through a symbolic link.
+* Confirmed 3.5 compatibility.
 
 == Changelog ==
+
+= 1.4.9, 15 December 2012 =
+* Replaced some ancient admin page code to enable loading the plugin through a symbolic link.
+* Confirmed 3.5 compatibility.
 
 = 1.4.8, 26 November 2011 =
 * Removed PluginSponsors.com code following threats that the plugin would be expelled from the plugin repository for using the code to display sponsorship messages
