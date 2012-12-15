@@ -10,7 +10,7 @@ Author URI: http://gregsplugins.com/
 
 /*  Greg's Threaded Comment Numbering
 	
-	Copyright (c) 2009-2011 Greg Mulhauser
+	Copyright (c) 2009-2012 Greg Mulhauser
 	http://gregsplugins.com
 	
 	Released under the GPL license
@@ -78,7 +78,7 @@ class gregsThreadedCommentNumbering {
 		if (!is_singular()) return; // don't bother unless we're on a page that could have a comment form
 		$prefix = $this->plugin_prefix;
 		$version = $this->plugin_version;
-		$here = str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); // get plugin folder name
+		$here = basename(dirname( __FILE__)) . '/'; // get plugin folder name
 		$name = $this->our_name;
 		if(@file_exists(TEMPLATEPATH."/{$prefix}-css.css")) {
 			wp_register_style("{$prefix}-plugin", get_stylesheet_directory_uri()."/{$prefix}-css.css", false, $version, 'all');		
@@ -331,8 +331,11 @@ if (is_admin()) {
 	include ('gtcn-setup-functions.php');
 	function gtcn_setup_setngo() {
 		$prefix = 'gtcn';
-		$location_full = __FILE__;
-		$location_local = plugin_basename(__FILE__);
+		// don't use plugin_basename -- buggy when using symbolic links
+		$dir = basename(dirname( __FILE__)) . '/';
+		$base = basename( __FILE__);
+		$location_full = WP_PLUGIN_DIR . '/' . $dir . $base;
+		$location_local = $dir . $base;
 		$args = compact('prefix','location_full','location_local');
 		$options_page_details = array ('Greg&#8217;s Threaded Comment Numbering Options','Threaded Comment Numbering','gregs-threaded-comment-numbering/gtcn-options.php');
 		new gtcnSetupHandler($args,$options_page_details);
