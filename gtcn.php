@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Greg's Threaded Comment Numbering
-Plugin URI: http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/
+Plugin URI: http://gregsplugins.com/lib/plugin-details/gregs-threaded-comment-numbering/
 Description: For WordPress 2.7 and above, this plugin numbers comments sequentially, including an hierarchical count up to ten levels deep (e.g., replies to comment number 2 will be numbered as 2.1, 2.2, 2.3 etc.).
-Version: 1.4
+Version: 1.5
 Author: Greg Mulhauser
-Author URI: http://counsellingresource.com/
+Author URI: http://gregsplugins.com/
 */
 
 /*  Greg's Threaded Comment Numbering
 	
-	Copyright (c) 2009-2010 Greg Mulhauser
-	http://counsellingresource.com
+	Copyright (c) 2009-2012 Greg Mulhauser
+	http://gregsplugins.com
 	
 	Released under the GPL license
 	http://www.opensource.org/licenses/gpl-license.php
@@ -75,9 +75,10 @@ class gregsThreadedCommentNumbering {
 
 	### Function: Greg's Threaded Comment Numbering CSS
 	function do_css() {
+		if (!is_singular()) return; // don't bother unless we're on a page that could have a comment form
 		$prefix = $this->plugin_prefix;
 		$version = $this->plugin_version;
-		$here = str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); // get plugin folder name
+		$here = basename(dirname( __FILE__)) . '/'; // get plugin folder name
 		$name = $this->our_name;
 		if(@file_exists(TEMPLATEPATH."/{$prefix}-css.css")) {
 			wp_register_style("{$prefix}-plugin", get_stylesheet_directory_uri()."/{$prefix}-css.css", false, $version, 'all');		
@@ -95,7 +96,7 @@ class gregsThreadedCommentNumbering {
 	function do_thank_you() {
 		if ( is_single() ){ // only show on individual post pages
 			$name = $this->our_name;
-			$message = str_replace('%THIS_PLUGIN%','<a href="http://counsellingresource.com">' . $name . ' plugin</a>',$this->opt_clean('thank_you_message'));
+			$message = str_replace('%THIS_PLUGIN%','<a href="http://gregsplugins.com">' . $name . ' plugin</a>',$this->opt_clean('thank_you_message'));
 			echo '<p>' . wptexturize($message) . '</p>';
 		} // end check whether thank you should be shown
 		return;
@@ -191,7 +192,7 @@ class gregsThreadedCommentNumbering {
 	}
 
 	### Function: Greg's Threaded Comment Numbering Core
-	function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentnumber' ) {
+	function comment_numbering( $comment_ID, $args = array(), $wrapclass = 'commentnumber', $mode = 'echo' ) {
 		// this would all be so easy, were it not for threading and paging and reversing, which make counting go all funky
 	
 		global $wpdb;
@@ -289,7 +290,10 @@ class gregsThreadedCommentNumbering {
 		$this->currentnumber[$depth + 1] = ''; // and start over for the next lower
 		$this->parenttrap[$depth] = $comment_ID; // save this ID in case of use by further children
 	
-		echo $before . $this->build_output($this->currentnumber) . $after;
+		$out = $before . $this->build_output($this->currentnumber) . $after;
+		// support quiet return of the output
+		if ('quiet' == $mode) return $out;
+		else echo $out;
 		return;
 		
 	} // end comment_numbering
@@ -327,8 +331,11 @@ if (is_admin()) {
 	include ('gtcn-setup-functions.php');
 	function gtcn_setup_setngo() {
 		$prefix = 'gtcn';
-		$location_full = __FILE__;
-		$location_local = plugin_basename(__FILE__);
+		// don't use plugin_basename -- buggy when using symbolic links
+		$dir = basename(dirname( __FILE__)) . '/';
+		$base = basename( __FILE__);
+		$location_full = WP_PLUGIN_DIR . '/' . $dir . $base;
+		$location_local = $dir . $base;
 		$args = compact('prefix','location_full','location_local');
 		$options_page_details = array ('Greg&#8217;s Threaded Comment Numbering Options','Threaded Comment Numbering','gregs-threaded-comment-numbering/gtcn-options.php');
 		new gtcnSetupHandler($args,$options_page_details);
@@ -336,10 +343,10 @@ if (is_admin()) {
 	gtcn_setup_setngo();
 } // end admin-only stuff
 else {
-	$gtcn = new gregsThreadedCommentNumbering('gtcn', '1.4', "Greg's Threaded Comment Numbering");
-	function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber') {
+	$gtcn = new gregsThreadedCommentNumbering('gtcn', '1.5', "Greg's Threaded Comment Numbering");
+	function gtcn_comment_numbering($comment_ID, $args, $wrapclass = 'commentnumber', $mode = 'echo') {
 		global $gtcn;
-		return $gtcn->comment_numbering($comment_ID, $args, $wrapclass);
+		return $gtcn->comment_numbering($comment_ID, $args, $wrapclass, $mode);
 	}
 } // end non-admin stuff
 
