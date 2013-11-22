@@ -3,8 +3,10 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 3.6.1
-Stable tag: 1.5.1
+Tested up to: 3.8-beta-1
+Stable tag: 1.5.2
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
@@ -16,7 +18,7 @@ This plugin numbers your comments sequentially and hierarchically, with full sup
 
 = New in This Version =
 
-* Updated WordPress version compatibility.
+* Dropped compatibility with very old versions of PHP no longer supported by WordPress.
 
 = Background =
 
@@ -65,10 +67,13 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Upgrade Notice ==
 
-= 1.5.1, 21 September 2013 =
-* Updated WordPress version compatibility.
+= 1.5.2, 22 November 2013 =
+* Dropped compatibility with very old versions of PHP no longer supported by WordPress.
 
 == Changelog ==
+
+= 1.5.2, 22 November 2013 =
+* Dropped compatibility with very old versions of PHP no longer supported by WordPress.
 
 = 1.5.1, 21 September 2013 =
 * Updated WordPress version compatibility.
