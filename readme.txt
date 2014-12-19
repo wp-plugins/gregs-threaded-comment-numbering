@@ -3,20 +3,22 @@ Contributors: GregMulhauser
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 3.0-RC1
-Stable tag: 1.4
+Tested up to: 4.1
+Stable tag: 1.5.5
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Numbers comments sequentially and hierarchically; handles comments which are threaded, paged and/or reversed. Coders can call the function directly.
 
 == Description ==
 
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
+
 This plugin numbers your comments sequentially and hierarchically, with full support for the new comment features available in WordPress 2.7 and later -- including threading, paging, and your choice of ascending or descending date order.
 
 = New in This Version =
 
-* Major reduction in database footprint in preparation for WordPress 3.0
-
-For more details on what's new in the latest main release, version 1.4, please see the update announcement: [WordPress Plugins Get Performance Boost](http://counsellingresource.com/features/2010/06/01/wordpress-plugins-performance-boost/)
+* Note on WordPress 4.1 compatibility.
 
 = Background =
 
@@ -28,9 +30,11 @@ The plugin numbers comments accurately whether you choose to display them in asc
 
 For coders, the plugin provides additional configuration options via direct calls to the function that handles the numbering.
 
-For more information, please see this plugin's original information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
+For more information, please see the plugin's 'Instructions' tab in the WordPress admin interface.
 
 == Installation ==
+
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
 
 1. Unzip the plugin archive
 2. Upload the entire folder `gregs-threaded-comment-numbering` to `/wp-content/plugins/`
@@ -54,7 +58,7 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Frequently Asked Questions ==
 
-I've moved this section of the README to the main information page for the plugin, where it can be updated independently of new releases.
+**NOTE:** Please do NOT use the WordPress forums to seek support for this plugin. Support for GTCN is handled on [our own site](http://gregsplugins.com/lib/faq/).
 
 == Screenshots ==
 
@@ -63,10 +67,58 @@ I've moved this section of the README to the main information page for the plugi
 
 == Upgrade Notice ==
 
-= 1.4, 1 June 2010 =
-* Major reduction in database footprint in preparation for WordPress 3.0
+= 1.5.5, 19 December 2014 =
+* Note on WordPress 4.1 compatibility.
 
 == Changelog ==
+
+= 1.5.5, 19 December 2014 =
+* Note on WordPress 4.1 compatibility.
+
+= 1.5.4, 8 October 2014 =
+* Documentation update and note on WordPress 4.0 compatibility.
+
+= 1.5.3, 23 April 2014 =
+* Noted compatibility with WordPress 3.9.
+
+= 1.5.2, 22 November 2013 =
+* Dropped compatibility with very old versions of PHP no longer supported by WordPress.
+
+= 1.5.1, 21 September 2013 =
+* Updated WordPress version compatibility.
+
+= 1.5, 20 December 2012 =
+* Added a missing fix to admin page code that was changed in the last version to work around a bug in WordPress's plugin_basename function.
+
+= 1.4.9, 15 December 2012 =
+* Replaced some ancient admin page code to enable loading the plugin through a symbolic link.
+* Confirmed 3.5 compatibility.
+
+= 1.4.8, 26 November 2011 =
+* Removed PluginSponsors.com code following threats that the plugin would be expelled from the plugin repository for using the code to display sponsorship messages
+
+= 1.4.7, 27 October 2011 =
+* Documentation updates
+
+= 1.4.6, 3 October 2011 =
+* Minor code cleanups
+
+= 1.4.5, 28 March 2011 =
+* Bugfix: the comment number can now be returned quietly (without echo) for further use by theme code
+
+= 1.4.4, 29 January 2011 =
+* Minor code cleanup
+* Testing with WP 3.1 Release Candidate 3
+
+= 1.4.3, 20 January 2011 =
+* Minor code cleanup
+* Testing with WP 3.1 Release Candidate 2
+
+= 1.4.2, 24 June 2010 =
+* Better workaround for WordPress 3.0's problems initialising plugins properly under multisite
+
+= 1.4.1, 24 June 2010 =
+* Workaround for rare problem where WordPress interferes with a newly activated plugin's ability to add options when using multisite/network mode
 
 = 1.4, 1 June 2010 =
 * Major reduction in database footprint in preparation for WordPress 3.0
@@ -139,10 +191,6 @@ I've moved this section of the README to the main information page for the plugi
 
 = 1.0, 27 January 2009 =
 * Initial public release
-
-== More Information ==
-
-For more information, please see this plugin's information page: [Greg's Threaded Comment Numbering Plugin](http://counsellingresource.com/features/2009/01/27/threaded-comment-numbering-plugin-for-wordpress/)
 
 == Fine Print ==
 
