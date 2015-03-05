@@ -1,10 +1,10 @@
 === Greg's Threaded Comment Numbering ===
 Contributors: GregMulhauser
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2799661
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HZS4Z96ZND8L4
 Tags: comments, count, numbering, threading, paging, paged comments, threaded comments, pingback, trackback, display, callback function, comments.php, greg mulhauser, comment number, comment counter, listing comments
 Requires at least: 2.7
-Tested up to: 4.1
-Stable tag: 1.5.6
+Tested up to: 4.1.1
+Stable tag: 1.5.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,9 +16,12 @@ Numbers comments sequentially and hierarchically; handles comments which are thr
 
 This plugin numbers your comments sequentially and hierarchically, with full support for the new comment features available in WordPress 2.7 and later -- including threading, paging, and your choice of ascending or descending date order.
 
+> My complete portfolio of 50 plugins, including this one, and also including the new [Faster Cache for WordPress](http://fastercache.com/) is now [available for adoption](http://gregsplugins.com/lib/sale/)!
+
 = New in This Version =
 
-* Fixed potential XSS vulnerability which could affect administrators who are logged in using an old browser and who visit a maliciously crafted URL on their own site. Thanks to Kacper Szurek for responsible disclosure of this problem in a different plugin.
+* Updates to documentation and code improvements
+* Note on portfolion of plugins now available for adoption
 
 = Background =
 
@@ -67,10 +70,15 @@ The version of the Intense Debate plugin which is current as of this writing ove
 
 == Upgrade Notice ==
 
-= 1.5.6, 10 January 2015 =
-* Fixed potential XSS vulnerability which could affect administrators who are logged in using an old browser and who visit a maliciously crafted URL on their own site. Thanks to Kacper Szurek for responsible disclosure of this problem in a different plugin.
+= 1.5.7, 5 March 2015 =
+* Updates to documentation and code improvements
+* Note on portfolion of plugins now available for adoption
 
 == Changelog ==
+
+= 1.5.7, 5 March 2015 =
+* Updates to documentation and code improvements
+* Note on portfolion of plugins now available for adoption
 
 = 1.5.6, 10 January 2015 =
 * Fixed potential XSS vulnerability which could affect administrators who are logged in using an old browser and who visit a maliciously crafted URL on their own site. Thanks to Kacper Szurek for responsible disclosure of this problem in a different plugin.
@@ -156,7 +164,7 @@ The version of the Intense Debate plugin which is current as of this writing ove
 = 1.2.4, 3 August 2009 =
 * Option to display comment number without `div` wrapper -- thanks to Gabriel
 * Documentation tweaks
-* Added support for [Plugin Sponsorship](http://pluginsponsors.com/)
+* Added support for plugin sponsorship
 
 = 1.2.3, 11 June 2009 =
 * Fully tested with final release of WordPress 2.8
